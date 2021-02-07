@@ -53,17 +53,21 @@ namespace EdlinSoftware.Safe.SafeLibTest.FieldClass
 		}
 
 		[Test]
-		[ExpectedException(typeof(ArgumentOutOfRangeException))]
 		public void Insert_RangeException()
 		{
-			m_List.Insert(1, m_Item);
+			Assert.Throws<ArgumentOutOfRangeException>(() =>
+			{
+				m_List.Insert(1, m_Item);
+			});
 		}
 
 		[Test]
-		[ExpectedException(typeof(ArgumentNullException))]
 		public void Insert_NullException()
 		{
-			m_List.Insert(0, null);
+			Assert.Throws<ArgumentNullException>(() =>
+			{
+				m_List.Insert(0, null);
+			});
 		}
 
 		[Test]
@@ -76,10 +80,12 @@ namespace EdlinSoftware.Safe.SafeLibTest.FieldClass
 		}
 
 		[Test]
-		[ExpectedException(typeof(ArgumentOutOfRangeException))]
 		public void RemoveAt_RangeException()
 		{
-			m_List.RemoveAt(10);
+			Assert.Throws<ArgumentOutOfRangeException>(() =>
+			{
+				m_List.RemoveAt(10);
+			});
 		}
 
 		[Test]
@@ -91,10 +97,12 @@ namespace EdlinSoftware.Safe.SafeLibTest.FieldClass
 		}
 
 		[Test]
-		[ExpectedException(typeof(ArgumentOutOfRangeException))]
 		public void Indexer_Get_RangeException()
 		{
-			var item = m_List[10];
+			Assert.Throws<ArgumentOutOfRangeException>(() =>
+			{
+				var item = m_List[10];
+			});
 		}
 
 		[Test]
@@ -107,10 +115,12 @@ namespace EdlinSoftware.Safe.SafeLibTest.FieldClass
 		}
 
 		[Test]
-		[ExpectedException(typeof(ArgumentOutOfRangeException))]
 		public void Indexer_Set_RangeException()
 		{
-			m_List[10] = m_Item;
+			Assert.Throws<ArgumentOutOfRangeException>(() =>
+			{
+				m_List[10] = m_Item;
+			});
 		}
 
 		[Test]
@@ -122,10 +132,12 @@ namespace EdlinSoftware.Safe.SafeLibTest.FieldClass
 		}
 
 		[Test]
-		[ExpectedException(typeof(ArgumentNullException))]
 		public void Add_NullException()
 		{
-			m_List.Add(null);
+			Assert.Throws<ArgumentNullException>(() =>
+			{
+				m_List.Add(null);
+			});
 		}
 
 		[Test]
@@ -161,10 +173,12 @@ namespace EdlinSoftware.Safe.SafeLibTest.FieldClass
 		}
 
 		[Test]
-		[ExpectedException(typeof(ArgumentNullException))]
 		public void CopyTo_NullException()
 		{
-			m_List.CopyTo(null, 0);
+			Assert.Throws<ArgumentNullException>(() =>
+			{
+				m_List.CopyTo(null, 0);
+			});
 		}
 
 		[Test]
@@ -218,12 +232,14 @@ namespace EdlinSoftware.Safe.SafeLibTest.FieldClass
 		}
 
 		[Test]
-		[ExpectedException(typeof(ArgumentOutOfRangeException))]
 		public void Move_RangeException()
 		{
-			m_List.Add(m_Item);
+			Assert.Throws<ArgumentOutOfRangeException>(() =>
+			{
+				m_List.Add(m_Item);
 
-			m_List.Move(0, 1);
+				m_List.Move(0, 1);
+			});
 		}
 	}
 }

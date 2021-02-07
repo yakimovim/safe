@@ -14,7 +14,7 @@ namespace EdlinSoftware.Safe.SafeLibTest.FieldClass
 		[Test]
 		public void Name_Ok()
 		{
-			Assert.AreEqual("Text field (Password:)", m_Field.Name);
+			Assert.AreEqual("Password field (Password:)", m_Field.Name);
 		}
 
 		[Test]
@@ -26,7 +26,7 @@ namespace EdlinSoftware.Safe.SafeLibTest.FieldClass
 		[Test]
 		public void FieldControl_TypeCheck()
 		{
-			Assert.IsInstanceOf<TextDataFieldControl>(m_Field.FieldControl);
+			Assert.IsInstanceOf<PasswordDataFieldControl>(m_Field.FieldControl);
 		}
 
 		[Test]

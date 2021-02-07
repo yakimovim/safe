@@ -55,24 +55,30 @@ namespace EdlinSoftware.Safe.SafeLibTest
 		}
 
 		[Test]
-		[ExpectedException(typeof(ArgumentNullException))]
 		public void Searcher_Search_NullString_ArgumentNullException()
 		{
-			Searcher.Search(m_List, null);
+			Assert.Throws<ArgumentNullException>(() =>
+			{
+				Searcher.Search(m_List, null);
+			});
 		}
 
 		[Test]
-		[ExpectedException(typeof(ArgumentNullException))]
 		public void Searcher_Search_EmptyString_ArgumentNullException()
 		{
-			Searcher.Search(m_List, string.Empty);
+			Assert.Throws<ArgumentNullException>(() =>
+			{
+				Searcher.Search(m_List, string.Empty);
+			});
 		}
 
 		[Test]
-		[ExpectedException(typeof(ArgumentNullException))]
 		public void Searcher_Search_NullList_ArgumentNullException()
 		{
-			Searcher.Search(null, "Some text");
+			Assert.Throws<ArgumentNullException>(() =>
+			{
+				Searcher.Search(null, "Some text");
+			});
 		}
 
 		[Test]
